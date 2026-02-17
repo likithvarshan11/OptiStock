@@ -84,7 +84,7 @@ const WorkingCapitalHeatmap: React.FC<Props> = ({ inventory }) => {
            <div className="bg-white rounded-[2.5rem] p-10 border border-slate-200 shadow-sm space-y-8">
               <div className="flex items-center space-x-3">
                  <Layers className="text-indigo-600" size={20} />
-                 <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-900">Aging concentration (>36M)</h4>
+                 <h4 className="text-[10px] font-black uppercase tracking-widest text-slate-900">Aging concentration ({'>'}36M)</h4>
               </div>
               <div className="space-y-6">
                  {['Plant Alpha', 'Hub Beta', 'Central Hub'].map((loc, i) => (

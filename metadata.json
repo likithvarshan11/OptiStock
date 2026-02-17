@@ -1,0 +1,5 @@
+{
+  "name": "OptiStock MVP",
+  "description": "Enterprise-grade inventory optimization platform with ABC/FSN scoring, automated recommendations, and data quality alerts.",
+  "requestFramePermissions": []
+}

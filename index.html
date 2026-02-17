@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OptiStock Elite - Supply Chain Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              brand: {
+                navy: '#0F172A',
+                accent: '#4F46E5',
+                success: '#10B981',
+                risk: '#EF4444',
+                warning: '#F59E0B',
+                slate: {
+                  50: '#F8FAFC',
+                  100: '#F1F5F9',
+                  200: '#E2E8F0',
+                  300: '#CBD5E1',
+                  400: '#94A3B8',
+                  500: '#64748B',
+                  600: '#475569',
+                  700: '#334155',
+                  800: '#1E293B',
+                  900: '#0F172A',
+                }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @media print {
+        .no-print { display: none !important; }
+        aside { display: none !important; }
+        main { margin: 0 !important; padding: 20px !important; width: 100% !important; }
+        .bg-white { border: 1px solid #e2e8f0 !important; box-shadow: none !important; }
+      }
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+      
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-style: normal !important;
+      }
+      
+      /* Force remove italics globally if utility classes are missed */
+      * {
+        font-style: normal !important;
+      }
+
+      .glass-panel { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.7); }
+      
+      .data-table-row:hover {
+        background-color: rgba(241, 245, 249, 0.5);
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "recharts": "https://esm.sh/recharts@^3.7.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.566.0"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-[#F8FAFC] antialiased text-brand-slate-900">
+    <div id="root"></div>
+  </body>
+</html>

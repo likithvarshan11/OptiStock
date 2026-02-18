@@ -26,7 +26,9 @@ import {
   ShieldAlert,
   Map,
   ChevronUp,
-  MessageSquare
+  MessageSquare,
+  Sliders,
+  Timer
 } from 'lucide-react';
 import { User, Role, SKU, Recommendation, Alert, ScoringConfig, ActiveTab, ABCClass, FSNClass, VEDClass, XYZClass, RecommendationAction } from './types';
 import { MOCK_SKUS } from './constants';
@@ -38,6 +40,9 @@ import AdminSettings from './components/AdminSettings';
 import AlertsPanel from './components/AlertsPanel';
 import ReportingModule from './components/ReportingModule';
 import UserProfile from './components/UserProfile';
+import SimulationConsole from './components/SimulationConsole';
+import RuleManagement from './components/RuleManagement';
+import GovernanceSLA from './components/GovernanceSLA';
 
 // Phase 2 Components
 import RiskAccelerationMonitor from './components/RiskAccelerationMonitor';
@@ -202,6 +207,9 @@ const App: React.FC = () => {
     { id: 'Inventory Analysis', icon: BarChart3, label: 'Inventory Analysis' },
     { id: 'Recommendations', icon: CheckCircle2, label: 'Recommendations', badge: recommendations.filter(r => r.status === 'PENDING').length },
     { id: 'Alerts', icon: AlertTriangle, label: 'Alerts', badge: alerts.length },
+    { id: 'Simulation Console', icon: Cpu, label: 'Simulation Console' },
+    { id: 'Rule Management', icon: Sliders, label: 'Rule Management' },
+    { id: 'Governance SLA', icon: Timer, label: 'Governance SLA' },
   ];
 
   const phase2Items = [
@@ -342,6 +350,9 @@ const App: React.FC = () => {
           {activeTab === 'Inventory Analysis' && <InventoryAnalysis inventory={inventory} />}
           {activeTab === 'Recommendations' && <RecommendationsView inventory={inventory} recommendations={recommendations} onAction={(id, status) => setRecommendations(p => p.map(r => r.id === id ? {...r, status} : r))} role={user.role} />}
           {activeTab === 'Alerts' && <AlertsPanel inventory={inventory} alerts={alerts} />}
+          {activeTab === 'Simulation Console' && <SimulationConsole />}
+          {activeTab === 'Rule Management' && <RuleManagement inventory={inventory} />}
+          {activeTab === 'Governance SLA' && <GovernanceSLA />}
           {activeTab === 'Profile' && <UserProfile user={user} preferences={preferences} setPreferences={(p) => { setPreferences(p); localStorage.setItem('optistock_prefs', JSON.stringify(p)); }} />}
           {activeTab === 'Admin Settings' && <AdminSettings config={scoringConfig} setConfig={setScoringConfig} role={user.role} />}
 
